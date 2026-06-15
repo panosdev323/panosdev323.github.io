@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Verdant Arcana</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Georgia", serif;
+            background: linear-gradient(135deg, #050a07 0%, #0a1f14 100%);
+            color: #d4efe2;
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        /* Starfield background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(1px 1px at 20% 30%, white, transparent),
+                radial-gradient(1px 1px at 60% 70%, white, transparent),
+                radial-gradient(1px 1px at 50% 50%, white, transparent),
+                radial-gradient(1px 1px at 80% 10%, white, transparent),
+                radial-gradient(1px 1px at 10% 90%, white, transparent),
+                radial-gradient(1px 1px at 40% 80%, white, transparent),
+                radial-gradient(1px 1px at 90% 60%, white, transparent);
+            background-repeat: repeat;
+            background-size: 200% 200%;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+            border-bottom: 1px solid #2a5f45;
+            padding-bottom: 40px;
+        }
+
+        .logo {
+            font-size: 48px;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 0 0 12px #55ffaa;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .tagline {
+            font-size: 14px;
+            font-style: italic;
+            color: #aaffcc;
+            letter-spacing: 1px;
+        }
+
+        .effective-date {
+            font-size: 12px;
+            color: #6b7280;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        .intro {
+            margin-bottom: 60px;
+            padding: 30px;
+            background: rgba(10, 30, 20, 0.6);
+            border-left: 3px solid #2aff8a;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .intro p {
+            margin-bottom: 15px;
+        }
+
+        .intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #2aff8a;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #2a5f45;
+            letter-spacing: 1px;
+        }
+
+        h2::before {
+            content: '✦ ';
+            margin-right: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #d4efe2;
+            font-size: 15px;
+        }
+
+        ul {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #d4efe2;
+            font-size: 15px;
+        }
+
+        a {
+            color: #86efac;
+            text-decoration: none;
+            border-bottom: 1px solid #86efac;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: #2aff8a;
+            border-bottom-color: #2aff8a;
+        }
+
+        .contact-section {
+            background: rgba(10, 30, 20, 0.8);
+            padding: 30px;
+            border-radius: 4px;
+            text-align: center;
+            margin-top: 40px;
+            border: 1px solid #2a5f45;
+        }
+
+        .contact-section p {
+            margin-bottom: 15px;
+        }
+
+        .contact-email {
+            display: inline-block;
+            padding: 12px 30px;
+            background: rgba(42, 255, 138, 0.1);
+            border: 1px solid #2aff8a;
+            border-radius: 4px;
+            color: #2aff8a;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .contact-email:hover {
+            background: rgba(42, 255, 138, 0.2);
+            box-shadow: 0 0 20px rgba(42, 255, 138, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid #2a5f45;
+            margin-top: 80px;
+            color: #6b7280;
+            font-size: 12px;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+        }
+
+        /* Decorative elements */
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #2a5f45, transparent);
+            margin: 60px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            .logo {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            .intro {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">VERDANT ARCANA</div>
+            <div class="tagline">Tarot · Nature · Truth</div>
+            <div class="effective-date">Privacy Policy · Effective: 24 May 2026</div>
+        </header>
+
+        <!-- Introduction -->
+        <div class="intro">
+            <p>Welcome to Verdant Arcana. We are committed to protecting your privacy. This policy explains what data is collected, how it is used, and your rights regarding that data.</p>
+            <p>The forest respects your solitude. What you seek in these cards remains between you and the ancient woods.</p>
+        </div>
+
+        <!-- Section 1 -->
+        <section>
+            <h2>Information We Collect</h2>
+            <p>Verdant Arcana stores your reading history and preferences locally on your device using browser or device storage. We do not collect personally identifiable information directly. The following game data is stored locally:</p>
+            <ul>
+                <li>Your reading history (which cards were drawn)</li>
+                <li>Your preferences and settings</li>
+                <li>Session data and timestamps</li>
+                <li>No account information or personal data</li>
+            </ul>
+        </section>
+
+        <!-- Section 2 -->
+        <section>
+            <h2>Advertising</h2>
+            <p>This app displays advertisements provided by Google AdMob, a third-party advertising service. AdMob may automatically collect limited technical information, including:</p>
+            <ul>
+                <li>Device type and operating system</li>
+                <li>Advertising identifiers (e.g., Google Advertising ID)</li>
+                <li>Crash and performance data</li>
+                <li>General usage and interaction information</li>
+            </ul>
+            <p>This information is collected and processed by Google in accordance with <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>. You may opt out of personalized advertising through your device settings.</p>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Section 3 -->
+        <section>
+            <h2>Data Storage</h2>
+            <p>All reading data is stored locally on your device only. We do not:</p>
+            <ul>
+                <li>Transmit your personal data to our servers</li>
+                <li>Sell or share your personal information with third parties</li>
+                <li>Require you to create an account or register</li>
+                <li>Collect any sensitive personal information</li>
+            </ul>
+            <p>You can delete all locally stored data at any time through your device or browser settings. Your readings are yours alone.</p>
+        </section>
+
+        <!-- Section 4 -->
+        <section>
+            <h2>Third-Party Services</h2>
+            <p>The application may integrate with the following third-party services, each governed by their own privacy policies:</p>
+            <ul>
+                <li>Google Play Services</li>
+                <li>Google AdMob</li>
+            </ul>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Section 5 -->
+        <section>
+            <h2>Data Safety</h2>
+            <ul>
+                <li>Reading data is stored locally on your device and not shared with us</li>
+                <li>No sensitive personal information is collected by us directly</li>
+                <li>No data encryption is applied to locally stored data (as it remains on your device)</li>
+                <li>You can clear all local data through your device settings at any time</li>
+                <li>Your readings are private to your device</li>
+            </ul>
+        </section>
+
+        <!-- Section 6 -->
+        <section>
+            <h2>Children's Privacy</h2>
+            <p>Verdant Arcana does not knowingly collect personal information from children under the age of 13. If you believe a child has provided personal information, please contact us so we can take appropriate action.</p>
+        </section>
+
+        <!-- Section 7 -->
+        <section>
+            <h2>Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for legal reasons. We encourage you to review this page periodically. Continued use of the application following any changes constitutes your acceptance of the updated policy.</p>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Section 8 - Contact -->
+        <section>
+            <h2>Contact Us</h2>
+            <div class="contact-section">
+                <p>If you have any questions, concerns, or requests regarding this Privacy Policy, please reach out:</p>
+                <a href="mailto:panospaoulinis@gmail.com" class="contact-email">panospaoulinis@gmail.com</a>
+                <p style="margin-top: 20px; font-size: 12px; color: #6b7280;">
+                    The forest listens to those who speak with respect.
+                </p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2026 Verdant Arcana. All rights reserved.</p>
+            <p>The cards remember. The forest endures.</p>
+        </footer>
+    </div>
+</body>
+</html>
