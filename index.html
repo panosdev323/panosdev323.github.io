@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panos Paou | Mobile Games & Apps</title>
+    <meta name="description" content="Official website of PanosDev323. Discover mobile games, applications, and privacy policies.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Inter, Segoe UI, Arial, sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: min(1100px, 90%);
+            margin: auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 100px 0 70px;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            color: #cbd5e1;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-bottom: 80px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 18px;
+            padding: 30px;
+            transition: 0.25s;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            background: rgba(255,255,255,0.12);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            text-decoration: none;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 10px;
+            background: #2563eb;
+            transition: 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+        }
+
+        .btn.secondary {
+            background: #334155;
+        }
+
+        .btn.secondary:hover {
+            background: #475569;
+        }
+
+        .contact {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .contact p {
+            color: #cbd5e1;
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #94a3b8;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Panos Paou</h1>
+            <p>
+                Independent developer creating mobile games and applications.
+                Explore current projects, game information and privacy policies.
+            </p>
+        </header>
+
+        <section>
+            <h2 class="section-title">Apps & Games</h2>
+
+            <div class="apps-grid">
+
+                <div class="card">
+                    <h3>Tower Eater</h3>
+                    <p>
+                        An action-packed mobile game featuring strategic gameplay and challenging progression.
+                    </p>
+
+                    <div class="buttons">
+                        <a href="/tower-eater/" class="btn">View Project</a>
+                        <a href="/tower-eater/privacy-policy.html" class="btn secondary">Privacy Policy</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Sons of the Land</h3>
+                    <p>
+                        Build, explore and conquer in a world shaped by your decisions.
+                    </p>
+
+                    <div class="buttons">
+                        <a href="/sons-of-the-land/" class="btn">View Project</a>
+                        <a href="/sons-of-the-land/privacy-policy.html" class="btn secondary">Privacy Policy</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Verdant Arcana</h3>
+                    <p>
+                        Discover magical adventures and unique worlds in this fantasy experience.
+                    </p>
+
+                    <div class="buttons">
+                        <a href="/verdant-arcana/" class="btn">View Project</a>
+                        <a href="/verdant-arcana/privacy-policy.html" class="btn secondary">Privacy Policy</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="contact">
+            <h2 class="section-title">Contact</h2>
+            <p>For support, business inquiries or feedback:</p>
+            <p>
+                <a href="mailto:panospaoulinis@gmail.com" style="color:#60a5fa;">
+                    panospaoulinis@gmail.com
+                </a>
+            </p>
+        </section>
+
+    </div>
+
+    <footer>
+        © 2026 Panos Paou. All rights reserved.
+    </footer>
+
+</body>
+</html>
