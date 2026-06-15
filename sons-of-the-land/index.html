@@ -115,6 +115,38 @@
             color:#f9a825;
             text-decoration:none;
         }
+        .btn-group{
+            display:flex;
+            gap:15px;
+            justify-content:center;
+            flex-wrap:wrap;
+            margin-top:20px;
+        }
+
+        .btn.secondary{
+            background:transparent;
+            color:#f9a825;
+            border:2px solid #f9a825;
+        }
+
+        .btn.secondary:hover{
+            background:#f9a825;
+            color:#1a1208;
+        }
+
+        /* responsive behavior */
+        @media (max-width:600px){
+            .btn-group{
+                flex-direction:column;
+                align-items:center;
+            }
+
+            .btn{
+                width:100%;
+                max-width:280px;
+                text-align:center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -135,7 +167,7 @@
             Complete famous quotes, answer historical questions,
             and prove your knowledge of history.
         </p>
-
+        <div class="btn-group">
         <a
             class="btn"
             href="https://play.google.com/store/apps/details?id=com.sonsoftheland.game&pcampaignid=web_share"
@@ -143,6 +175,14 @@
             rel="noopener noreferrer">
             Download on Google Play
         </a>
+        <a
+            class="btn secondary"
+            href="../index.html"
+            target="_self"
+            rel="noopener noreferrer">
+            See more apps
+        </a>
+        </div>
     </header>
 
     <section>

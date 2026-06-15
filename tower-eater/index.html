@@ -131,6 +131,42 @@ footer a{
     color:#22c55e;
     text-decoration:none;
 }
+.btn-group{
+    display:flex;
+    gap:15px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.btn.secondary{
+    background:rgba(255,255,255,0.02);
+    color:#22c55e;
+    border:1px solid rgba(34,197,94,.4);
+    backdrop-filter: blur(6px);
+    box-shadow:0 0 0 transparent;
+}
+
+.btn.secondary:hover{
+    background:rgba(34,197,94,.12);
+    border-color:#22c55e;
+    box-shadow:0 0 15px rgba(34,197,94,.25);
+    transform:translateY(-3px);
+}
+
+/* responsive behavior */
+@media (max-width:600px){
+    .btn-group{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .btn{
+        width:100%;
+        max-width:280px;
+        text-align:center;
+    }
+}
 </style>
 </head>
 <body>
@@ -152,15 +188,22 @@ footer a{
         Survive enemy attacks, unlock the base,
         and conquer over 120 challenging levels.
     </p>
-
-    <a
-        href="https://play.google.com/store/apps/details?id=com.panosdev.towereater&pcampaignid=web_share"
-        class="btn"
-        target="_blank"
-        rel="noopener noreferrer">
-        Download on Google Play
-    </a>
-
+    <div class="btn-group">
+        <a
+            href="https://play.google.com/store/apps/details?id=com.panosdev.towereater&pcampaignid=web_share"
+            class="btn"
+            target="_blank"
+            rel="noopener noreferrer">
+            Download on Google Play
+        </a>
+        <a
+            class="btn secondary"
+            href="../index.html"
+            target="_self"
+            rel="noopener noreferrer">
+            See more apps
+        </a>
+    </div>
 </header>
 
 <section>

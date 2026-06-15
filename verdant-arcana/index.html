@@ -131,6 +131,39 @@ footer a{
     color:#aaffcc;
     text-decoration:none;
 }
+.btn-group{
+    display:flex;
+    gap:15px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.btn.secondary{
+    background:transparent;
+    color:#aaffcc;
+    border:2px solid rgba(42,255,138,.6);
+}
+
+.btn.secondary:hover{
+    background:rgba(42,255,138,.15);
+    color:#ffffff;
+    border-color:#2aff8a;
+}
+
+/* responsive behavior */
+@media (max-width:600px){
+    .btn-group{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .btn{
+        width:100%;
+        max-width:280px;
+        text-align:center;
+    }
+}
 </style>
 </head>
 <body>
@@ -152,15 +185,22 @@ footer a{
         Draw three cards and uncover the message hidden within the forest.
         Not prediction. Reflection.
     </p>
-
-    <a
-        href="https://play.google.com/store/apps/details?id=com.verdantarcana.game&pcampaignid=web_share"
-        class="btn"
-        target="_blank"
-        rel="noopener noreferrer">
-        Download on Google Play
-    </a>
-
+    <div class="btn-group">
+        <a
+            href="https://play.google.com/store/apps/details?id=com.verdantarcana.game&pcampaignid=web_share"
+            class="btn"
+            target="_blank"
+            rel="noopener noreferrer">
+            Download on Google Play
+        </a>
+        <a
+            class="btn secondary"
+            href="../index.html"
+            target="_self"
+            rel="noopener noreferrer">
+            See more apps
+        </a>
+    </div>
 </header>
 
 <section>
