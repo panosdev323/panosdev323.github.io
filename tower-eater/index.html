@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TowerEater</title>
+
+<meta name="description"
+      content="Become the monster. Eat towers, evolve your powers, survive enemy attacks and conquer over 120 levels.">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Inter,Segoe UI,sans-serif;
+    background:linear-gradient(135deg,#111827,#1f2937);
+    color:white;
+    line-height:1.6;
+}
+
+.container{
+    width:min(1100px,90%);
+    margin:auto;
+}
+
+header{
+    text-align:center;
+    padding:90px 0;
+}
+
+.logo{
+    font-size:90px;
+    margin-bottom:20px;
+}
+
+h1{
+    font-size:4rem;
+    font-weight:800;
+}
+
+.title-accent{
+    color:#22c55e;
+}
+
+.subtitle{
+    margin-top:15px;
+    color:#9ca3af;
+    font-size:1.2rem;
+}
+
+.description{
+    max-width:750px;
+    margin:35px auto;
+    color:#d1d5db;
+    font-size:1.1rem;
+}
+
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    background:#22c55e;
+    color:#08120b;
+    font-weight:700;
+    padding:15px 30px;
+    border-radius:12px;
+    transition:.2s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+section{
+    margin:80px 0;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:35px;
+    color:#22c55e;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:25px;
+}
+
+.card .icon{
+    font-size:42px;
+    margin-bottom:12px;
+}
+
+.card h3{
+    margin-bottom:12px;
+    color:#22c55e;
+}
+
+.card p{
+    color:#d1d5db;
+}
+
+.quote{
+    text-align:center;
+    max-width:800px;
+    margin:auto;
+    font-size:1.2rem;
+    color:#d1d5db;
+}
+
+footer{
+    text-align:center;
+    padding:40px 20px;
+    border-top:1px solid rgba(255,255,255,.08);
+    color:#9ca3af;
+}
+
+footer a{
+    color:#22c55e;
+    text-decoration:none;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<header>
+
+    <div class="logo">👾</div>
+
+    <h1>Tower<span class="title-accent">Eater</span></h1>
+
+    <p class="subtitle">
+        You are the monster.
+    </p>
+
+    <p class="description">
+        Eat towers. Mutate. Become stronger.
+        Survive enemy attacks, unlock the base,
+        and conquer over 120 challenging levels.
+    </p>
+
+    <a
+        href="https://play.google.com/store/apps/details?id=com.panosdev.towereater&pcampaignid=web_share"
+        class="btn"
+        target="_blank"
+        rel="noopener noreferrer">
+        Download on Google Play
+    </a>
+
+</header>
+
+<section>
+
+    <h2>How to Play</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="icon">👆</div>
+            <h3>Swipe to Move</h3>
+            <p>
+                Navigate your monster across the grid and plan your route carefully.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🍴</div>
+            <h3>Eat Towers</h3>
+            <p>
+                Absorb towers to gain permanent bonuses and evolve your monster.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🔒</div>
+            <h3>Unlock the Base</h3>
+            <p>
+                Eat enough towers to unlock the base and complete the level.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">💀</div>
+            <h3>Survive</h3>
+            <p>
+                Towers shoot at you. Dodge attacks or tank damage using armor.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section>
+
+    <h2>Monster Evolution</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="icon">🔥</div>
+            <h3>Fire Towers</h3>
+            <p>
+                Increase movement speed and become harder to catch.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">❄️</div>
+            <h3>Ice Towers</h3>
+            <p>
+                Gain armor and reduce incoming damage.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">✨</div>
+            <h3>Arcane Towers</h3>
+            <p>
+                Increase power and maximum health.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">☠️</div>
+            <h3>Poison Towers</h3>
+            <p>
+                Gain resistance against dangerous gas effects.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section>
+
+    <h2>120 Levels & Endless Mode</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="icon">⚔️</div>
+            <h3>Dungeon</h3>
+            <p>Learn the basics and begin your evolution.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌿</div>
+            <h3>Cursed Forest</h3>
+            <p>Faster bullets and hidden traps.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌋</div>
+            <h3>Volcanic Lands</h3>
+            <p>Explosive attacks and heavy damage.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌀</div>
+            <h3>Endless Mode</h3>
+            <p>
+                Infinite waves and ever-increasing difficulty.
+                How far can you go?
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section>
+
+    <h2>The Goal</h2>
+
+    <p class="quote">
+        Build the perfect monster, devour every tower,
+        and reach the base before it destroys you.
+    </p>
+
+</section>
+
+</div>
+
+<footer>
+
+    <p>
+        <a href="./privacy-policy.html">Privacy Policy</a>
+    </p>
+
+    <p style="margin-top:12px;">
+        © 2026 PanosDev323
+    </p>
+
+</footer>
+
+</body>
+</html>
