@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy · Time Vandal</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:        #0d0720;
+      --bg2:       #110a1e;
+      --surface:   #1a0a2e;
+      --border:    rgba(255, 215, 0, 0.15);
+      --accent:    #ffd700;
+      --accent2:   #c0392b;
+      --gold:      #ffd700;
+      --text:      #d4c89a;
+      --text-dim:  #c8b97a;
+      --text-faint:#3a2e1a;
+      --red:       #e74c3c;
+      --green:     #27ae60;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 18px;
+      line-height: 1.75;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── Marble texture overlay ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.5;
+    }
+
+    /* ── Subtle gold vein lines ── */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(105deg, transparent 40%, rgba(255,215,0,0.015) 50%, transparent 60%),
+        linear-gradient(75deg,  transparent 30%, rgba(255,215,0,0.01)  45%, transparent 55%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Hero header ── */
+    header {
+      position: relative;
+      padding: 80px 24px 60px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,215,0,0.07) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 20% 100%, rgba(192,57,43,0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* Gold border top */
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+    }
+
+    .header-eyebrow {
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 5px;
+      color: var(--accent2);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeUp 0.6s 0.1s forwards;
+    }
+
+    .header-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(36px, 8vw, 72px);
+      font-weight: 700;
+      letter-spacing: 4px;
+      line-height: 1;
+      color: #fff;
+      margin-bottom: 12px;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.2s forwards;
+      text-shadow: 0 0 40px rgba(255,215,0,0.2);
+    }
+
+    .header-title span {
+      color: var(--gold);
+      -webkit-text-stroke: 1px rgba(255,215,0,0.3);
+    }
+
+    .header-subtitle {
+      font-family: 'Cinzel', serif;
+      font-size: 12px;
+      letter-spacing: 4px;
+      color: var(--text-dim);
+      margin-bottom: 28px;
+      font-style: italic;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.3s forwards;
+    }
+
+    .header-meta {
+      display: inline-block;
+      font-size: 13px;
+      color: var(--text-dim);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 6px 20px;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.4s forwards;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 1px;
+    }
+
+    /* ── Decorative column divider ── */
+    .pillar-divider {
+      text-align: center;
+      padding: 32px 0 8px;
+      color: var(--text-faint);
+      font-size: 20px;
+      letter-spacing: 20px;
+      opacity: 0.6;
+    }
+
+    /* ── Main content ── */
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── Intro block ── */
+    .intro {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 28px 32px;
+      margin-bottom: 48px;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      animation: fadeUp 0.6s 0.5s forwards;
+    }
+
+    .intro::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--gold), var(--accent2));
+    }
+
+    /* Corner ornaments */
+    .intro::after {
+      content: '🏛';
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 24px;
+      opacity: 0.15;
+    }
+
+    .intro p { color: var(--text); font-size: 17px; }
+
+    .intro .tagline {
+      margin-top: 14px;
+      color: var(--text-dim);
+      font-style: italic;
+      font-size: 16px;
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+    }
+
+    /* ── Sections ── */
+    section {
+      margin-bottom: 44px;
+      opacity: 0;
+      animation: fadeUp 0.5s forwards;
+    }
+
+    section:nth-child(2)  { animation-delay: 0.55s; }
+    section:nth-child(3)  { animation-delay: 0.60s; }
+    section:nth-child(4)  { animation-delay: 0.65s; }
+    section:nth-child(5)  { animation-delay: 0.70s; }
+    section:nth-child(6)  { animation-delay: 0.75s; }
+    section:nth-child(7)  { animation-delay: 0.80s; }
+    section:nth-child(8)  { animation-delay: 0.85s; }
+    section:nth-child(9)  { animation-delay: 0.90s; }
+
+    h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    h2::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.4;
+      flex-shrink: 0;
+    }
+
+    h2::after {
+      content: '';
+      display: block;
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, var(--gold), transparent);
+      opacity: 0.12;
+    }
+
+    p { margin-bottom: 14px; color: var(--text); }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── Lists ── */
+    ul {
+      list-style: none;
+      margin: 14px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    ul li {
+      padding-left: 22px;
+      position: relative;
+      color: var(--text);
+      font-size: 17px;
+    }
+
+    ul li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 11px;
+      top: 5px;
+      opacity: 0.7;
+    }
+
+    /* ── Ad info card ── */
+    .ad-card {
+      background: rgba(192, 57, 43, 0.06);
+      border: 1px solid rgba(192, 57, 43, 0.2);
+      border-radius: 4px;
+      padding: 20px 24px;
+      margin: 16px 0;
+    }
+
+    .ad-card ul li::before { color: var(--accent2); }
+
+    /* ── Data safety grid ── */
+    .safety-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    @media (max-width: 500px) {
+      .safety-grid { grid-template-columns: 1fr; }
+    }
+
+    .safety-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 14px 16px;
+      font-size: 15px;
+      color: var(--text-dim);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .safety-item .icon {
+      font-size: 16px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── Links ── */
+    a {
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,215,0,0.25);
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    a:hover {
+      color: #ffe566;
+      border-color: rgba(255,215,0,0.6);
+    }
+
+    /* ── Contact block ── */
+    .contact-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 28px 32px;
+      text-align: center;
+    }
+
+    .contact-block .contact-email {
+      display: inline-block;
+      margin-top: 12px;
+      font-family: 'Cinzel', serif;
+      font-size: 14px;
+      letter-spacing: 1px;
+      color: var(--gold);
+      border-color: rgba(255,215,0,0.25);
+    }
+
+    /* ── Footer ── */
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 40px 24px;
+      text-align: center;
+    }
+
+    footer::before {
+      content: '';
+      display: block;
+      width: 120px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      margin: 0 auto 28px;
+      opacity: 0.4;
+    }
+
+    .footer-title {
+      font-family: 'Cinzel', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 4px;
+      margin-bottom: 6px;
+      text-shadow: 0 0 30px rgba(255,215,0,0.15);
+    }
+
+    .footer-title span { color: var(--gold); }
+
+    .footer-tagline {
+      font-style: italic;
+      color: var(--text-dim);
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: var(--text-faint);
+      letter-spacing: 2px;
+      font-family: 'Cinzel', serif;
+    }
+
+    /* ── Animations ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-eyebrow">Privacy Policy</div>
+  <h1 class="header-title">TIME <span>VANDAL</span></h1>
+  <div class="header-subtitle">Find the anachronism · Outsmart history</div>
+  <div class="header-meta">Effective: June 2026</div>
+</header>
+
+<main>
+
+  <div class="intro">
+    <p>Welcome to Time Vandal. We are committed to protecting your privacy. This policy explains what data is collected, how it is used, and your rights regarding that data.</p>
+    <p class="tagline">The vandal leaves no traces. Neither do we store yours.</p>
+  </div>
+
+  <section>
+    <h2>Information We Collect</h2>
+    <p>Time Vandal stores your game progress and high scores locally on your device. We do not collect personally identifiable information directly. The following data is stored locally on your device:</p>
+    <ul>
+      <li>Your nickname and high score (stored locally only)</li>
+      <li>Sound and music preferences</li>
+      <li>Session data</li>
+      <li>No account information or personal data</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Advertising</h2>
+    <p>This app displays advertisements provided by Google AdMob, a third-party advertising service. AdMob may automatically collect limited technical information, including:</p>
+    <div class="ad-card">
+      <ul>
+        <li>Device type and operating system</li>
+        <li>Advertising identifiers (e.g., Google Advertising ID)</li>
+        <li>Crash and performance data</li>
+        <li>General usage and interaction information</li>
+      </ul>
+    </div>
+    <p>This information is collected and processed by Google in accordance with <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>. You may opt out of personalized advertising through your device settings.</p>
+    <p>Rewarded ads are shown optionally when you request a hint during gameplay. No data is collected by us as a result of watching these ads.</p>
+  </section>
+
+  <section>
+    <h2>Data Storage</h2>
+    <p>All game progress is stored locally on your device only. We do not:</p>
+    <ul>
+      <li>Transmit your personal data to our servers</li>
+      <li>Sell or share your personal information with third parties</li>
+      <li>Require you to create an account or register</li>
+      <li>Collect any sensitive personal information</li>
+    </ul>
+    <p>You can delete all locally stored data at any time through your device or browser settings. Your scores are yours alone.</p>
+  </section>
+
+  <section>
+    <h2>Third-Party Services</h2>
+    <p>The application may integrate with the following third-party services, each governed by their own privacy policies:</p>
+    <ul>
+      <li>Google Play Services</li>
+      <li>Google AdMob</li>
+      <li>Cloudinary (image delivery CDN — no user data collected)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Data Safety</h2>
+    <div class="safety-grid">
+      <div class="safety-item">
+        <span class="icon">💾</span>
+        <span>Game data stored locally on your device only</span>
+      </div>
+      <div class="safety-item">
+        <span class="icon">🔒</span>
+        <span>No sensitive personal information collected by us</span>
+      </div>
+      <div class="safety-item">
+        <span class="icon">🚫</span>
+        <span>No data sold or shared with third parties</span>
+      </div>
+      <div class="safety-item">
+        <span class="icon">🗑️</span>
+        <span>Clear all local data anytime via device settings</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Children's Privacy</h2>
+    <p>Time Vandal does not knowingly collect personal information from children under the age of 13. If you believe a child has provided personal information, please contact us so we can take appropriate action.</p>
+  </section>
+
+  <section>
+    <h2>Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for legal reasons. We encourage you to review this page periodically. Continued use of the application following any changes constitutes your acceptance of the updated policy.</p>
+  </section>
+
+  <section>
+    <h2>Contact Us</h2>
+    <div class="contact-block">
+      <p>If you have any questions, concerns, or requests regarding this Privacy Policy, please reach out:</p>
+      <a class="contact-email" href="mailto:panospaoulinis@gmail.com">panospaoulinis@gmail.com</a>
+    </div>
+  </section>
+
+  <div class="pillar-divider">🏛 ✦ 🏛</div>
+
+</main>
+
+<footer>
+  <div class="footer-title">TIME <span>VANDAL</span></div>
+  <div class="footer-tagline">History has never been so suspicious.</div>
+  <div class="footer-copy">© 2026 Time Vandal · All rights reserved.</div>
+</footer>
+
+</body>
+</html>
