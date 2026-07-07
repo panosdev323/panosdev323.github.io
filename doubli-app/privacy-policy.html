@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy · Doubli</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-top:     #2a2a52;
+      --bg-bottom:  #15152e;
+      --surface:    rgba(255, 255, 255, 0.05);
+      --border:     rgba(255, 255, 255, 0.14);
+      --gold:       #ffd54f;
+      --teal:       #26a69a;
+      --pink:       #ec4899;
+      --sky:        #4fc3f7;
+      --orchid:     #ab47bc;
+      --green:      #51cf66;
+      --text:       #ffffff;
+      --text-dim:   #a0a0c0;
+      --text-faint: rgba(255, 255, 255, 0.32);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+    }
+
+    body {
+      background: linear-gradient(to bottom, var(--bg-top), var(--bg-bottom));
+      background-attachment: fixed;
+      color: var(--text-dim);
+      font-family: 'Nunito', Arial, Helvetica, sans-serif;
+      font-size: 17px;
+      line-height: 1.7;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── Ambient floating decorations - ίδιο motif με IntroScene/MenuScene ── */
+    .decor {
+      position: fixed;
+      pointer-events: none;
+      opacity: 0.16;
+      animation: float 4s ease-in-out infinite;
+      z-index: 0;
+    }
+    .decor-star   { top: 6%;  left: 6%;  color: var(--gold); font-size: 30px; }
+    .decor-circle { top: 9%;  right: 8%; width: 22px; height: 22px; border-radius: 50%; background: var(--sky); animation-delay: .4s; }
+    .decor-teal   { bottom: 18%; left: 9%; width: 18px; height: 18px; border-radius: 50%; background: var(--teal); animation-delay: 1s; }
+    .decor-pink   { bottom: 10%; right: 10%; color: var(--pink); font-size: 22px; animation-delay: .7s; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-10px); }
+    }
+
+    header {
+      position: relative;
+      padding: 72px 24px 48px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-badge {
+      width: 76px;
+      height: 76px;
+      margin: 0 auto 22px;
+      border-radius: 24px;
+      background: var(--surface);
+      border: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--gold);
+      opacity: 0;
+      animation: popIn 0.5s 0.1s cubic-bezier(.34,1.56,.64,1) forwards;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+
+    .header-eyebrow {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: var(--teal);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      opacity: 0;
+      animation: riseIn 0.5s 0.2s forwards;
+    }
+
+    .header-title {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: clamp(38px, 9vw, 62px);
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #ffffff;
+      margin-bottom: 10px;
+      opacity: 0;
+      animation: riseIn 0.5s 0.3s forwards;
+      text-shadow: 0 0 30px rgba(255, 213, 79, 0.2);
+    }
+    .header-title span { color: var(--gold); }
+
+    .header-subtitle {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: riseIn 0.5s 0.4s forwards;
+    }
+
+    .header-meta {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      color: #15152e;
+      background: var(--gold);
+      border-radius: 20px;
+      padding: 7px 20px;
+      opacity: 0;
+      animation: riseIn 0.5s 0.5s forwards;
+      font-family: 'Baloo 2', sans-serif;
+    }
+
+    @keyframes riseIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes popIn  { from { opacity: 0; transform: scale(0.7); }     to { opacity: 1; transform: scale(1); } }
+
+    /* ── Colorful chip divider - callback στα game-mode χρώματα του Doubli ── */
+    .chip-divider {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      padding: 30px 0 6px;
+    }
+    .chip-divider span {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      opacity: 0.55;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    .intro {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 26px 28px;
+      margin-bottom: 44px;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      animation: riseIn 0.5s 0.6s forwards;
+    }
+    .intro::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: linear-gradient(to bottom, var(--gold), var(--pink));
+      border-radius: 4px 0 0 4px;
+    }
+    .intro p { color: #ffffff; font-weight: 600; font-size: 16.5px; }
+    .intro .tagline {
+      margin-top: 14px;
+      color: var(--text-dim);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 15px;
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+    }
+
+    section {
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: riseIn 0.45s forwards;
+    }
+    section:nth-of-type(1) { animation-delay: 0.65s; }
+    section:nth-of-type(2) { animation-delay: 0.70s; }
+    section:nth-of-type(3) { animation-delay: 0.75s; }
+    section:nth-of-type(4) { animation-delay: 0.80s; }
+    section:nth-of-type(5) { animation-delay: 0.85s; }
+    section:nth-of-type(6) { animation-delay: 0.90s; }
+    section:nth-of-type(7) { animation-delay: 0.95s; }
+    section:nth-of-type(8) { animation-delay: 1.00s; }
+
+    h2 {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--gold);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    h2::after {
+      content: '';
+      display: block;
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, var(--border), transparent);
+    }
+
+    p { margin-bottom: 12px; color: var(--text-dim); }
+    p:last-child { margin-bottom: 0; }
+    strong { color: #ffffff; }
+
+    ul { list-style: none; margin: 12px 0; display: flex; flex-direction: column; gap: 8px; }
+    ul li { padding-left: 24px; position: relative; color: var(--text-dim); font-size: 16px; }
+    ul li::before {
+      content: '●';
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+      font-size: 8px;
+      top: 8px;
+    }
+
+    /* ── Purchases card (αντί για ad-card) ── */
+    .purchase-card {
+      background: rgba(38, 166, 154, 0.08);
+      border: 1px solid rgba(38, 166, 154, 0.25);
+      border-radius: 16px;
+      padding: 18px 22px;
+      margin: 14px 0;
+    }
+    .purchase-card ul li::before { color: var(--teal); }
+    .no-ads-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(81, 207, 102, 0.12);
+      border: 1px solid rgba(81, 207, 102, 0.35);
+      border-radius: 999px;
+      padding: 7px 16px;
+      font-family: 'Baloo 2', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--green);
+      margin-bottom: 14px;
+    }
+
+    .safety-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    @media (max-width: 500px) { .safety-grid { grid-template-columns: 1fr; } }
+    .safety-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 16px;
+      font-size: 14.5px;
+      color: var(--text-dim);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .safety-item .icon { font-size: 17px; flex-shrink: 0; margin-top: 1px; }
+
+    a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(255, 213, 79, 0.3); transition: color 0.2s, border-color 0.2s; }
+    a:hover { color: #ffe082; border-color: rgba(255, 213, 79, 0.7); }
+
+    .contact-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 30px 28px;
+      text-align: center;
+    }
+    .contact-block p { color: var(--text-dim); }
+    .contact-email {
+      display: inline-block;
+      margin-top: 14px;
+      font-family: 'Baloo 2', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--gold);
+      border-color: rgba(255, 213, 79, 0.3);
+    }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 36px 24px 44px;
+      text-align: center;
+    }
+    footer::before {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 3px;
+      border-radius: 3px;
+      background: linear-gradient(to right, var(--gold), var(--pink));
+      margin: 0 auto 24px;
+      opacity: 0.7;
+    }
+    .footer-title {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+    .footer-title span { color: var(--gold); }
+    .footer-tagline { font-style: italic; color: var(--text-dim); font-size: 14px; margin-bottom: 18px; }
+    .footer-copy { font-size: 12px; color: var(--text-faint); letter-spacing: 1px; font-family: 'Baloo 2', sans-serif; }
+  </style>
+</head>
+<body>
+
+<div class="decor decor-star">★</div>
+<div class="decor decor-circle"></div>
+<div class="decor decor-teal"></div>
+<div class="decor decor-pink">✦</div>
+
+<header>
+  <div class="header-badge">D</div>
+  <div class="header-eyebrow">Privacy Policy</div>
+  <h1 class="header-title">DOUB<span>LI</span></h1>
+  <div class="header-subtitle">A playful way to learn · Ages 4-6</div>
+  <div class="header-meta">Effective: July 2026</div>
+</header>
+
+<div class="chip-divider">
+  <span style="background:var(--gold)"></span>
+  <span style="background:var(--sky)"></span>
+  <span style="background:var(--pink)"></span>
+  <span style="background:var(--teal)"></span>
+  <span style="background:var(--orchid)"></span>
+</div>
+
+<main>
+
+  <div class="intro">
+    <p>Doubli is a screen-time you can feel good about. This page explains what information is collected, how it's used, and the choices you have — in plain language, not legal jargon.</p>
+    <p class="tagline">Built for little hands, big smiles, and grown-up peace of mind.</p>
+  </div>
+
+  <section>
+    <h2>Information We Collect</h2>
+    <p>Doubli stores your child's game progress and star ratings <strong>locally on the device</strong>. No account, no login, no personal information is required to play.</p>
+    <ul>
+      <li>Level progress and star ratings (stored locally only)</li>
+      <li>Sound preference settings</li>
+      <li>No name, email, or any identifying information collected</li>
+      <li>No account creation or registration of any kind</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Purchases</h2>
+    <div class="no-ads-badge">🚫📢 No ads anywhere in the app</div>
+    <p>Doubli is free to download and play. It offers one optional, one-time purchase to unlock additional levels.</p>
+    <div class="purchase-card">
+      <ul>
+        <li>Handled entirely by Google Play Billing</li>
+        <li>Doubli never sees or stores your payment card details</li>
+        <li>One-time purchase only — no subscriptions, no recurring charges</li>
+        <li>A parent or guardian should always be present for any purchase decision</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Data Storage</h2>
+    <p>All game progress is stored locally on the device only. We do not:</p>
+    <ul>
+      <li>Transmit personal data to any server (Doubli does not operate one)</li>
+      <li>Sell or share information with third parties</li>
+      <li>Require an account or registration</li>
+      <li>Collect any sensitive personal information</li>
+    </ul>
+    <p>You can clear all locally stored data at any time through your device settings.</p>
+  </section>
+
+  <section>
+    <h2>Third-Party Services</h2>
+    <p>Doubli integrates with the following third-party service, governed by its own privacy policy:</p>
+    <ul>
+      <li>Google Play Services (used only to process the optional level-unlock purchase)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Data Safety</h2>
+    <div class="safety-grid">
+      <div class="safety-item"><span class="icon">💾</span><span>Game data stored locally on the device only</span></div>
+      <div class="safety-item"><span class="icon">🚫</span><span>No ads, no ad tracking, ever</span></div>
+      <div class="safety-item"><span class="icon">🔒</span><span>No personal information collected</span></div>
+      <div class="safety-item"><span class="icon">🗑️</span><span>Clear all local data anytime via device settings</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Children's Privacy</h2>
+    <p>Doubli is designed from the ground up for children ages 4-6, and does not knowingly collect personal information from anyone, including children under 13.</p>
+    <ul>
+      <li>No chat, messaging, or user-generated content of any kind</li>
+      <li>No links to outside websites or social media from within gameplay</li>
+      <li>No advertising or ad tracking — Doubli has no ads at all</li>
+      <li>The optional purchase runs entirely through Google Play's own purchase flow, which includes its own parental controls</li>
+    </ul>
+    <p>If you believe your child has provided personal information to us, please contact us so we can delete it.</p>
+  </section>
+
+  <section>
+    <h2>Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for legal reasons. We encourage you to review this page periodically. Continued use of the app following any changes constitutes your acceptance of the updated policy.</p>
+  </section>
+
+  <section>
+    <h2>Contact Us</h2>
+    <div class="contact-block">
+      <p>Questions, concerns, or requests regarding this Privacy Policy? Reach out any time:</p>
+      <a class="contact-email" href="mailto:your-email@example.com">panospaoulinis@gmail.com</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-title">DOUB<span>LI</span></div>
+  <div class="footer-tagline">Learning made playful.</div>
+  <div class="footer-copy">© 2026 Doubli · All rights reserved.</div>
+</footer>
+
+</body>
+</html>
