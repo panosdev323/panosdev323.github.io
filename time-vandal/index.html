@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Time Vandal</title>
+<link rel="icon" type="image/png" href="/favicon.png">
+<meta name="description"
+content="Find the anachronism. Explore historical scenes, discover hidden modern objects and beat the clock in Time Vandal.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Crimson+Pro:wght@300;400;600&display=swap');
+
+:root{
+    --bg:#0d0720;
+    --surface:#1a0a2e;
+    --gold:#ffd700;
+    --red:#c0392b;
+    --text:#d4c89a;
+    --dim:#c8b97a;
+    --border:rgba(255,215,0,.15);
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    background:
+    radial-gradient(circle at top,rgba(255,215,0,.08),transparent 40%),
+    linear-gradient(135deg,#0d0720,#110a1e);
+
+    color:white;
+    font-family:'Crimson Pro',Georgia,serif;
+    line-height:1.7;
+}
+.container{
+    width:min(1100px,90%);
+    margin:auto;
+}
+header{
+    text-align:center;
+    padding:90px 0;
+    border-bottom:1px solid var(--border);
+}
+.logo{
+    font-size:90px;
+    margin-bottom:20px;
+}
+h1{
+    font-family:'Cinzel',serif;
+    font-size:4rem;
+    letter-spacing:5px;
+}
+.title-accent{
+    color:var(--gold);
+}
+.subtitle{
+    margin-top:15px;
+    color:var(--dim);
+    letter-spacing:4px;
+    font-style:italic;
+}
+.description{
+    max-width:780px;
+    margin:35px auto;
+    color:var(--text);
+    font-size:1.15rem;
+}
+.btn-group{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    background:var(--gold);
+    color:#120b00;
+    font-weight:700;
+    padding:15px 30px;
+    border-radius:6px;
+    font-family:'Cinzel',serif;
+    transition:.2s;
+}
+.btn:hover{
+    transform:translateY(-3px);
+}
+.btn.secondary{
+    background:transparent;
+    color:var(--gold);
+    border:1px solid rgba(255,215,0,.4);
+}
+.btn.secondary:hover{
+    background:rgba(255,215,0,.1);
+}
+section{
+    margin:80px 0;
+}
+h2{
+    text-align:center;
+    font-family:'Cinzel',serif;
+    letter-spacing:3px;
+    color:var(--gold);
+    margin-bottom:35px;
+}
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+.card{
+    background:rgba(255,255,255,.04);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:25px;
+
+}
+.card .icon{
+    font-size:42px;
+    margin-bottom:15px;
+}
+.card h3{
+    font-family:'Cinzel',serif;
+    color:var(--gold);
+    margin-bottom:12px;
+
+}
+.card p{
+    color:var(--text);
+}
+.quote{
+    max-width:800px;
+    margin:auto;
+    text-align:center;
+    font-size:1.3rem;
+    color:var(--text);
+    font-style:italic;
+
+}
+footer{
+    text-align:center;
+    padding:40px 20px;
+    border-top:1px solid var(--border);
+    color:var(--dim);
+}
+footer a{
+    color:var(--gold);
+    text-decoration:none;
+}
+
+@media(max-width:600px){
+    h1{
+        font-size:2.8rem;
+    }
+    .btn{
+        width:100%;
+        max-width:280px;
+    }
+    .btn-group{
+        flex-direction:column;
+        align-items:center;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+<header>
+<div class="logo">🏛️</div>
+<h1>TIME <span class="title-accent">VANDAL</span></h1>
+
+<p class="subtitle">
+Find the anachronism · Outsmart history
+</p>
+
+<p class="description">
+Something is wrong with history...
+Can you find it?
+
+Explore breathtaking historical scenes from Ancient Egypt,
+Viking ships, Roman arenas, Samurai markets and more.
+Hidden inside every image is a modern object that does not belong.
+
+Your mission:
+find it before time runs out.
+</p>
+
+
+<div class="btn-group">
+<a
+href="https://play.google.com/store/apps/details?id=com.timevandal.game"
+class="btn"
+target="_blank"
+rel="noopener noreferrer">
+Download on Google Play
+</a>
+
+<a
+href="/"
+class="btn secondary">
+See more apps
+</a>
+
+</div>
+</header>
+
+<section>
+<h2>How to Play</h2>
+<div class="grid">
+<div class="card">
+<div class="icon">🔍</div>
+<h3>Find the Anachronism</h3>
+<p>
+Scan the scene carefully and tap the modern object that does not belong.
+A smartphone in Ancient Rome? A rubber duck in a royal bath?
+Nothing is safe from the vandal of history.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">⏱️</div>
+<h3>Race Against Time</h3>
+<p>
+You have 30 seconds.
+Every wrong tap costs precious time.
+Find objects quickly to earn Lightning Bonuses and keep your streak alive.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">💡</div>
+<h3>Need a Hint?</h3>
+<p>
+Watch a short rewarded ad to freeze the timer and receive a helpful clue.
+The clock stops while you search.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">🏛️</div>
+<h3>Learn While Playing</h3>
+
+<p>
+Every discovery reveals fascinating historical facts.
+Discover secrets from civilizations across time.
+</p>
+
+</div>
+</div>
+</section>
+
+<section>
+<h2>Explore History</h2>
+<div class="grid">
+
+<div class="card">
+<div class="icon">🐪</div>
+<h3>Ancient Egypt</h3>
+<p>
+Search forgotten temples, royal chambers and mysterious ancient scenes.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">⚔️</div>
+<h3>Roman Empire</h3>
+<p>
+Enter arenas, markets and cities filled with hidden surprises.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">🚢</div>
+<h3>Viking Age</h3>
+<p>
+Explore legendary ships and frozen northern landscapes.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">🗡️</div>
+<h3>Samurai Era</h3>
+<p>
+Discover hidden objects in traditional Japanese worlds.
+</p>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2>Features</h2>
+<div class="grid">
+<div class="card">
+<div class="icon">🎨</div>
+<h3>1000+ Historical Scenes</h3>
+<p>
+Hand-crafted scenes packed with details and hidden discoveries.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">🎯</div>
+<h3>4 Difficulty Levels</h3>
+<p>
+From obvious objects to almost invisible discoveries.
+</p>
+</div>
+
+<div class="card">
+
+<div class="icon">📅</div>
+<h3>Daily Challenge</h3>
+<p>
+A new historical mystery every day.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">🔥</div>
+<h3>Streak Bonuses</h3>
+<p>
+Build your streak, multiply your score and beat your records.
+</p>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2>The Goal</h2>
+<p class="quote">
+"History has been changed.
+Your job is to find who vandalized it."
+</p>
+</section>
+</div>
+
+<footer>
+<p>
+<a href="./privacy-policy.html">
+Privacy Policy
+</a>
+</p>
+
+<p style="margin-top:12px;">
+© 2026 Time Vandal
+</p>
+</footer>
+</body>
+</html>
