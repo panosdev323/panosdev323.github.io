@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Doubli</title>
+<link rel="icon" type="image/png" href="/favicon.png">
+<meta name="description"
+      content="Doubli is a playful learning game for children ages 4-6, with patterns, sounds, matching, and more — no ads, ever.">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg-top:     #2a2a52;
+    --bg-bottom:  #15152e;
+    --surface:    rgba(255, 255, 255, 0.05);
+    --border:     rgba(255, 255, 255, 0.14);
+    --gold:       #ffd54f;
+    --teal:       #26a69a;
+    --pink:       #ec4899;
+    --sky:        #4fc3f7;
+    --orchid:     #ab47bc;
+    --green:      #51cf66;
+    --text:       #ffffff;
+    --text-dim:   #a0a0c0;
+    --text-faint: rgba(255, 255, 255, 0.32);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Nunito', Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, var(--bg-top), var(--bg-bottom));
+    background-attachment: fixed;
+    color: var(--text-dim);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* ── Ambient floating decorations ── */
+  .decor {
+    position: fixed;
+    pointer-events: none;
+    opacity: 0.16;
+    animation: float 4s ease-in-out infinite;
+    z-index: 0;
+  }
+  .decor-star   { top: 6%;  left: 6%;  color: var(--gold); font-size: 30px; }
+  .decor-circle { top: 9%;  right: 8%; width: 22px; height: 22px; border-radius: 50%; background: var(--sky); animation-delay: .4s; }
+  .decor-teal   { bottom: 18%; left: 9%; width: 18px; height: 18px; border-radius: 50%; background: var(--teal); animation-delay: 1s; }
+  .decor-pink   { bottom: 10%; right: 10%; color: var(--pink); font-size: 22px; animation-delay: .7s; }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-10px); }
+  }
+
+  .container {
+    width: min(1100px, 90%);
+    margin: auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  header {
+    text-align: center;
+    padding: 80px 0 40px;
+  }
+
+  .header-badge {
+    width: 84px;
+    height: 84px;
+    margin: 0 auto 22px;
+    border-radius: 26px;
+    background: var(--surface);
+    border: 2px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 34px;
+    font-weight: 800;
+    color: var(--gold);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+
+  h1 {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: clamp(2.6rem, 9vw, 4rem);
+    font-weight: 800;
+    color: #ffffff;
+    text-shadow: 0 0 30px rgba(255, 213, 79, 0.2);
+  }
+  h1 span { color: var(--gold); }
+
+  .subtitle {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--teal);
+    margin-top: 12px;
+  }
+
+  .description {
+    max-width: 640px;
+    margin: 26px auto 0;
+    color: var(--text-dim);
+    font-size: 1.1rem;
+  }
+
+  .no-ads-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(81, 207, 102, 0.12);
+    border: 1px solid rgba(81, 207, 102, 0.35);
+    border-radius: 999px;
+    padding: 7px 18px;
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--green);
+    margin-top: 22px;
+  }
+
+  .btn-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 28px;
+  }
+
+  .btn {
+    display: inline-block;
+    text-decoration: none;
+    background: var(--gold);
+    color: #15152e;
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 700;
+    padding: 14px 28px;
+    border-radius: 14px;
+    transition: transform .2s, box-shadow .2s;
+    box-shadow: 0 8px 20px rgba(255, 213, 79, 0.15);
+  }
+  .btn:hover { transform: translateY(-2px); }
+
+  .btn.secondary {
+    background: transparent;
+    color: var(--gold);
+    border: 2px solid var(--gold);
+  }
+  .btn.secondary:hover { background: var(--gold); color: #15152e; }
+
+  .chip-divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0 0;
+  }
+  .chip-divider span {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    opacity: 0.55;
+  }
+
+  section { margin: 70px 0; }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: .5px;
+  }
+
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    border-radius: 4px 0 0 4px;
+  }
+  .card:nth-child(6n+1)::before { background: var(--gold); }
+  .card:nth-child(6n+2)::before { background: var(--sky); }
+  .card:nth-child(6n+3)::before { background: var(--pink); }
+  .card:nth-child(6n+4)::before { background: var(--teal); }
+  .card:nth-child(6n+5)::before { background: var(--orchid); }
+  .card:nth-child(6n+6)::before { background: var(--green); }
+
+  .card .emoji { font-size: 38px; margin-bottom: 10px; }
+
+  .card h3 {
+    font-family: 'Baloo 2', sans-serif;
+    margin-bottom: 8px;
+    color: #ffffff;
+    font-size: 1.05rem;
+  }
+
+  .card p { color: var(--text-dim); font-size: 0.98rem; }
+
+  .about-text {
+    text-align: center;
+    max-width: 760px;
+    margin: auto;
+    color: var(--text-dim);
+    font-size: 1.05rem;
+  }
+
+  .safety-strip {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+  }
+  .safety-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 9px 18px;
+    font-size: 14px;
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 44px 20px;
+    border-top: 1px solid var(--border);
+    color: var(--text-faint);
+    position: relative;
+    z-index: 1;
+  }
+  footer::before {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    border-radius: 3px;
+    background: linear-gradient(to right, var(--gold), var(--pink));
+    margin: 0 auto 24px;
+    opacity: 0.7;
+  }
+  footer a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(255,213,79,.3); }
+  footer a:hover { color: #ffe082; border-color: rgba(255,213,79,.7); }
+  .footer-title {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 6px;
+  }
+  .footer-title span { color: var(--gold); }
+  .footer-copy { font-size: 12px; margin-top: 14px; letter-spacing: 1px; font-family: 'Baloo 2', sans-serif; }
+
+  @media (max-width: 600px) {
+    .btn-group { flex-direction: column; align-items: center; }
+    .btn { width: 100%; max-width: 280px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="decor decor-star">★</div>
+<div class="decor decor-circle"></div>
+<div class="decor decor-teal"></div>
+<div class="decor decor-pink">✦</div>
+
+<div class="container">
+
+  <header>
+    <div class="header-badge">D</div>
+    <h1>DOUB<span>LI</span></h1>
+    <div class="subtitle">A playful way to learn</div>
+    <p class="description">
+      A gentle, joyful learning game made for little ones ages 4-6.
+      Patterns, sounds, matching, and more — designed for small hands
+      and big smiles, with grown-up peace of mind built right in.
+    </p>
+    <div class="no-ads-badge">🚫📢 No ads anywhere in the app</div>
+    <div class="btn-group">
+      <a class="btn"
+         href="https://play.google.com/store/apps/details?id=com.doubli.game"
+         target="_blank"
+         rel="noopener noreferrer">
+        Download on Google Play
+      </a>
+      <a class="btn secondary"
+         href="/"
+         target="_self"
+         rel="noopener noreferrer">
+        See more apps
+      </a>
+    </div>
+  </header>
+
+  <div class="chip-divider">
+    <span style="background:var(--gold)"></span>
+    <span style="background:var(--sky)"></span>
+    <span style="background:var(--pink)"></span>
+    <span style="background:var(--teal)"></span>
+    <span style="background:var(--orchid)"></span>
+  </div>
+
+  <section>
+    <h2>Features</h2>
+    <div class="features">
+
+      <div class="card">
+        <div class="emoji">🧩</div>
+        <h3>30+ Playful Modes</h3>
+        <p>From Pattern Fun to Mirror Match, every mode is a new little
+           adventure in learning.</p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">🔊</div>
+        <h3>Sounds &amp; Sights</h3>
+        <p>Animal sounds, colors, shapes, and opposites, all wrapped in
+           cheerful, friendly design.</p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">⭐</div>
+        <h3>Stars &amp; Progress</h3>
+        <p>Kids earn stars as they play, watching their own progress grow
+           level by level.</p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">🚫</div>
+        <h3>No Ads, Ever</h3>
+        <p>No interruptions, no pop-ups, no ad tracking — just calm,
+           focused play.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>About Doubli</h2>
+    <p class="about-text">
+      Doubli was built from the ground up for children ages 4-6, blending
+      early-learning concepts with playful, colorful game design. No
+      account, no login, and nothing to worry about — just screen time
+      you can feel good about.
+    </p>
+    <div class="safety-strip">
+      <div class="safety-item">💾 Progress stored on device</div>
+      <div class="safety-item">🔒 No personal info collected</div>
+      <div class="safety-item">🗑️ Easy to clear anytime</div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="footer-title">DOUB<span>LI</span></div>
+  <p><a href="./privacy-policy.html">Privacy Policy</a></p>
+  <p class="footer-copy">© 2026 Panos Paou</p>
+</footer>
+
+</body>
+</html>
